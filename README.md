@@ -7,15 +7,18 @@ In August 2023, Karnataka's electricity demand jumped by ~50%. The same month, t
 
 ## The answer
 
-**Mostly the failed monsoon.** Of the ~1,860 MW of extra demand in Aug–Oct 2023:
+**The failed monsoon was the largest identifiable driver — roughly 40–75% of the surge.** The rest came from a
+lasting increase that began in August 2023 (free electricity plus other growth), which the data cannot cleanly split.
+
+Of the ~1,860 MW of extra demand in Aug–Oct 2023:
 
 | Cause | Share |
 |---|---|
-| 🌧️ Failed monsoon (farm pumping during the drought) | **~75%** (range 24–78%) |
-| 💡 Free electricity (households) | **≤13%** (≤22% using grid data only) |
-| ❓ Other | ~10–20% |
+| 🌧️ Failed monsoon (farm pumping during the drought) | **~43–78%** |
+| 💡❓ Free electricity + other lasting changes | **~22–57%** |
 
-The key evidence: **2016 had an equally dry monsoon and no free electricity, and demand followed almost the same path.**
+Two natural experiments bracket the answer: **2016** (drought, no scheme) shows a drought alone can explain up to
+~78%; **2024** (scheme, normal rain) was still +12.3% above expected, so the drought share could be as low as ~43%.
 
 ![2016 vs 2023](reports/figures/07_2016_vs_2023.png)
 
@@ -26,9 +29,9 @@ The key evidence: **2016 had an equally dry monsoon and no free electricity, and
 2. **The surge was in farm-pump hours** (day +60%, night +54% vs 2022), while evening household demand rose the same
    as in later years when rain was normal (+24% vs +21–26%).
 3. **A drought year without the scheme (2016) looked almost the same** (+16.7% vs +21.5% above expected).
-4. **Free electricity can explain only a small share** — limited both by official household consumption data and,
-   independently, by the grid data alone.
-5. **Open question:** after 2016 demand returned to normal; after 2023 it **stayed high** through 2024–25.
+4. **A lasting increase switched on in August 2023 and stayed** — absent in July 2023, present every month after,
+   including evening household hours (+10–13% above expected in 2023–25). This fits a free-electricity effect, but the
+   grid data cannot separate it from other growth. After the 2016 drought, by contrast, demand returned to normal.
 
 **Context — 15 years of change:** peak demand grew 2.35× (7.8 → 18.4 GW), and the daily peak moved from 8 pm to
 10 am as farm pumping shifted to daytime solar hours.
@@ -47,7 +50,8 @@ The key evidence: **2016 had an equally dry monsoon and no free electricity, and
    calendar, temperature and rainfall; backtested on unseen years (±4% monthly error).
 4. **Separating causes:** rain regressions, hour-of-day fingerprints, change-point timing, weekday vs Sunday,
    external household data.
-5. **Robustness:** faster-growth scenarios, placebo years, excluding doubtful days, and the 2016 natural experiment.
+5. **Robustness:** faster-growth scenarios, placebo years, excluding doubtful days, and two natural experiments
+   (2016 and 2024) that bracket the drought share.
 
 Methods follow Cicala (2020, *A View from the Grid*), Brodersen et al. (2015, *CausalImpact*) and Card & Krueger's
 natural-experiment logic. Hypotheses and tests were written down **before** the analysis in
@@ -74,9 +78,10 @@ python -m jupyter nbconvert --to notebook --execute --inplace 01_data_collection
 
 ## Limitations
 
-The robust result is the **ranking** (monsoon ≫ free electricity), not a precise split. Hourly data is missing for
-Jan–Jul 2023, 2016 is the only comparison drought year, and the hour-of-day mapping (households vs farms) is
-approximate. See the [report](reports/final_report.md#6-limitations).
+The robust result is that the **failed monsoon was the largest identifiable driver**, not a precise split. Each bound
+rests on one comparison year (2016, 2024), hourly data is missing for Jan–Jul 2023, the scheme cannot be separated
+from other lasting growth, and the hour-of-day mapping (households vs farms) is approximate. See the
+[report](reports/final_report.md#6-limitations).
 
 ## Data sources & credits
 

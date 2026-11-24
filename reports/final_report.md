@@ -5,21 +5,30 @@
 
 ## ▲ The answer
 
-**The 2023 surge was driven mainly by the failed monsoon, not by the free-electricity scheme.**
+**The failed monsoon was the largest identifiable driver of the 2023 surge — roughly 40–75% of it. The rest came
+from a lasting increase that began in August 2023 (free electricity plus other growth), which the data cannot
+cleanly split.**
 
 Of the ~1,860 MW of extra demand in August–October 2023:
 
-| Cause | Best estimate | Plausible range |
+| Cause | Share | How it is bounded |
 |---|---|---|
-| 🌧️ **Failed monsoon** (farm pumping during the drought) | **~75%** | 24–78% |
-| 💡 **Free electricity** (Gruha Jyothi, households) | **≤13%** | 0–13% using official household data; ≤22% using grid data only |
-| ❓ **Other** | ~10–20% | — |
+| 🌧️ **Failed monsoon** (farm pumping during the drought) | **~43–78%** | two natural experiments: 2016 and 2024 |
+| 💡❓ **Free electricity + other lasting changes** | **~22–57%** | the remainder |
+| *of which free electricity (official-data estimate)* | *≤13%* | *news figures and an old household share — reference only* |
 
-The strongest evidence: **2016 had an equally failed monsoon and no free electricity, and its demand followed
-almost the same path** (+16.7% above normal, vs +21.5% in 2023).
+Two natural experiments bracket the answer:
+- **2016 — drought, no scheme:** demand rose +16.7% above expected (2023: +21.5%), so a drought alone can explain up
+  to ~78% → **upper end**.
+- **2024 — scheme, normal rain:** demand was *still* +12.3% above expected. If that lasting increase was already
+  present in 2023, the drought explains only ~43% → **lower end**.
 
-One thing neither cause explains: after the 2016 drought demand returned to normal, but **after 2023 it stayed
-high through 2024 and 2025**.
+The lasting increase switched on around August 2023 and never went away; it includes a +10–13% rise in evening
+household hours that fits a free-electricity effect. After the 2016 drought, by contrast, demand returned to normal.
+
+> **Two measures are used in this report.** *Excess over Model A* = demand above what calendar, heat and growth
+> predict (it includes the drought); for Aug–Oct 2023 it is **+21.5%**. *Excess over Model B* = demand above a model
+> that also accounts for rainfall; for Aug–Oct 2023 it is **+15.6%**.
 
 ---
 
@@ -84,35 +93,44 @@ Growth in Aug–Oct compared with 2022:
 | Day 10–16h (farm pumps) | **+60%** | +31% | +31% |
 | Evening 18–22h (households) | +24% | +21% | +26% |
 
-The evening increase in 2023 was the same as in 2024–25, when the scheme continued but rain was normal. The extra
-2023 surge was in the hours when farm pumps run.
+The *extra* 2023 surge was in the hours when farm pumps run. The evening increase was similar in 2023, 2024 and 2025 —
+but it is itself well above normal growth, which points to a lasting household-hour effect (see 4.4), not to the
+absence of one.
 
 ![Hourly fingerprint](figures/04_hourly_fingerprint.png)
 
-### 4.3 A drought year without free electricity looked almost the same
+### 4.3 Two natural experiments bracket the drought share
 
-2016 had a monsoon as dry as 2023 (250 mm vs 256 mm) and no scheme. Using the same method:
+Using the same method (excess over Model A, Aug–Oct):
 
-| Year | Situation | Demand above expected (Aug–Oct) |
+| Year | Situation | Demand above expected |
 |---|---|---|
 | 2016 | drought, **no scheme** | **+16.7%** |
 | 2017 | normal rain, no scheme | −2.4% |
 | 2023 | drought + scheme | **+21.5%** |
-| 2024 | normal rain + scheme | +12.3% |
+| 2024 | normal rain + scheme | **+12.3%** |
+| 2025 | normal rain + scheme | +14.4% |
 
-During August–December, the 2023 and 2016 curves move almost together. A drought alone produced most of a
-2023-sized surge.
+- **2016** shows what a drought *alone* does. During August–December, the 2016 and 2023 curves move almost
+  together → the drought could explain up to **~78%** of 2023's excess.
+- **2024** shows what the lasting increase does *without* a drought. If it was already present in Aug–Oct 2023,
+  the drought explains only **~43%**. (Using 2025 instead gives ~33%, but 2025 includes another year of extra growth.)
 
 ![2016 vs 2023](figures/07_2016_vs_2023.png)
 
-### 4.4 Free electricity can explain only a small share
+### 4.4 A lasting increase switched on in August 2023 — and it includes household hours
 
-Two independent limits:
+- The excess over Model B was **+3.3% in July 2023** (normal), then **+7% to +17% in every month** from August 2023
+  to June 2024, including months with no drought.
+- **Evening household hours** were +10% to +13% above expected in 2023, 2024 and 2025, compared with −12% to +7% in
+  pre-scheme test years. This **fits a free-electricity effect**, although faster general growth could also
+  contribute.
+- After the 2016 drought, demand returned to normal in 2017. After 2023 it did not.
 
-- **Using official household figures:** household use rose 7–11% in the scheme's first year, and households are
-  ~20–25% of consumption → **at most ~240 MW, ≤13%** of the 2023 excess.
-- **Using grid data only** (no government household figures): the 2016 drought alone produced +16.7%; 2023 was +21.5%.
-  Everything except the drought — including the scheme — can therefore explain at most ~5 points, **≤22%**.
+**How large is the free-electricity part?** The grid data cannot separate it from other lasting growth. Official
+figures (household use +7–11% in the first year; households ~20–25% of consumption) suggest **≤ ~240 MW (≤13%)**, but
+these inputs are weak — news reports and a 2016-17 household share — so this is a reference estimate, not a firm
+limit.
 
 ![Revised ranges](figures/07_revised_ranges.png)
 
@@ -125,26 +143,33 @@ The findings were tested by trying to break them:
 | Test | Would break the finding if… | Result | Verdict |
 |---|---|---|---|
 | Faster growth trend (4–8%/yr instead of 3%) | the unexplained excess disappears | 816–1,276 MW remain | ✅ holds |
-| Placebo years (2015, 2021, 2022) | the method finds fake effects | ≤ ±4.5% (2023: +15.6%) | ✅ holds |
+| Placebo years (2015, 2021, 2022) | the method finds fake effects | ≤ ±4.5% excess over Model B (2023: +15.6%) | ✅ holds |
 | Drop 8 days where data sources disagree | results change | no change | ✅ holds |
-| 2016 drought, no scheme | a drought alone gives the same jump | it does (+16.7%) | ⚠️ raised the drought share from ~30% to ~75% |
+| 2016 drought, no scheme | a drought alone gives the same jump | it does (+16.7% vs +21.5%) | sets the **upper end** (~78%) |
+| 2024 scheme, normal rain | the lasting increase was already there in 2023 | +12.3% remains | sets the **lower end** (~43%) |
 
 **On data trustworthiness:** rainfall and temperature come from ERA5 (European Centre for Medium-Range Weather
 Forecasts) via Open-Meteo, not from any Indian government source. The rain–demand relationship appears in years
 before the scheme (2016, 2019–2022). The hourly grid data agrees with KPTCL's separately reported daily energy totals
-(correlation 0.9995). Only the "≤13%" limit relies on government household figures; the grid-only limit (≤22%) does not.
+(correlation 0.9995). The drought range uses grid and weather data only; only the "≤13%" free-electricity estimate
+relies on government household figures.
+
+**Revision note:** an earlier version of this report gave a single best estimate of ~75% for the drought. After an
+external review, the 2024 comparison was added as a lower bound, and the result is now reported as a range.
 
 ## 6. Limitations
 
-- **Wide ranges.** The robust result is the *ranking* (monsoon ≫ free electricity), not a precise split.
-- **One comparison drought year.** 2016 is a strong analogue but not a perfect twin (older data, different farm supply
-  schedule).
+- **Wide range.** The robust result is that the failed monsoon was the largest identifiable driver — not a precise
+  split.
+- **Each bracket rests on one year.** 2016 is older, less reliable data with a different farm supply schedule; 2024
+  includes a year of extra growth and the drought's after-effects (low groundwater, a hot summer).
+- **The scheme cannot be separated from other lasting growth** with grid data alone.
 - **Missing data:** no hourly data from 3 Jan to 12 Jul 2023.
 - **Hour-of-day mapping is approximate:** households also use power at night and in the day; some pumps run in the
   evening.
-- **The lasting rise after 2023 is unexplained.** Demand stayed 10–20% above the model through 2024–25, unlike after
-  2016. Candidates: the scheme (if larger than official figures), faster growth, new farm connections or longer supply
-  hours, Bengaluru's commercial growth. This is a separate question from the 2023 shock.
+- **What the lasting increase consists of is open.** Candidates: the scheme (possibly larger than official figures
+  suggest), faster growth after 2022, new farm connections or longer supply hours, Bengaluru's commercial growth
+  (2024–25 shows a Sunday dip, unlike 2023).
 - **Correlation-based reasoning:** natural experiments and counterfactual models support, but do not prove, causation.
 
 ## 7. Methodology
@@ -158,7 +183,8 @@ before the scheme (2016, 2019–2022). The hourly grid data agrees with KPTCL's 
    Model B's typical monthly error ±4%. Pre-scheme check (13–31 Jul 2023): +3.3%, within error.
 4. **Separating causes** — rain regression within Aug–Dec 2023 (scheme constant), hour-of-day fingerprints,
    weekday/Sunday comparison, change-point search, external household data.
-5. **Robustness** — trend sensitivity, placebo years, flagged-day exclusion, 2016 natural experiment.
+5. **Robustness** — trend sensitivity, placebo years, flagged-day exclusion, and two natural experiments
+   (2016: drought without scheme; 2024: scheme without drought) that bracket the drought share.
 
 The analysis plan, including hypotheses and the tests that would prove them wrong, was written before the analysis
 (`00_analysis_plan.md`); every later change is logged there.
