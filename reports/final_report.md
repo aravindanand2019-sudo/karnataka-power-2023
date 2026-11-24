@@ -5,7 +5,7 @@
 
 ## ▲ The answer
 
-**The failed monsoon was the largest identifiable driver of the 2023 surge — roughly 40–75% of it. The rest came
+**The failed monsoon was the largest identifiable driver of the 2023 surge — 43–78% of it. The rest came
 from a lasting increase that began in August 2023 (free electricity plus other growth), which the data cannot
 cleanly split.**
 

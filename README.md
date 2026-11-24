@@ -7,7 +7,7 @@ In August 2023, Karnataka's electricity demand jumped by ~50% compared with Augu
 
 ## The answer
 
-**The failed monsoon was the largest identifiable driver — roughly 40–75% of the surge.** The rest came from a
+**The failed monsoon was the largest identifiable driver — 43–78% of the surge.** The rest came from a
 lasting increase that began in August 2023 (free electricity plus other growth), which the data cannot cleanly split.
 
 Of the ~1,860 MW of extra demand in Aug–Oct 2023 (demand above what calendar, heat and normal growth predict,
@@ -22,8 +22,8 @@ Two natural experiments bracket the answer: **2016** (drought, no scheme; Aug–
 almost the same as 2023's −45%) shows a drought alone can explain up to ~78%; **2024** (scheme, normal rain) was still
 +12.3% above expected, so the drought share could be as low as ~43%.
 
-> **Which baseline?** "+50%" = vs the same months of 2022. "+21.5%" and "1,860 MW" = vs Model A (expected demand
-> without rain). "+15.6%" = vs Model B (expected demand with rain). See the report.
+> **Which baseline?** "+50%" = vs the same months of 2022. "+21.5%" and "1,860 MW" = vs Model A (a model that ignores
+> rainfall). "+15.6%" = vs Model B (a model that includes rainfall). See the report.
 
 ![2016 vs 2023](reports/figures/07_2016_vs_2023.png)
 
@@ -67,7 +67,7 @@ history cannot prove this order; the plan's change log records every later revis
 ## Repo structure
 
 ```
-00_analysis_plan.md   hypotheses & tests, written before the analysis (with change log)
+00_analysis_plan.md   hypotheses & tests, written before the models were built (with change log)
 notebooks/            01–02 Validate · 03–04 Describe · 05–07 Evaluate
 src/                  data.py · clean.py · features.py · model.py · plots.py · config.py
 reports/              final_report.md · validation_log.csv · figures/
