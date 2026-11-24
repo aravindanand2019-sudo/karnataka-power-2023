@@ -15,7 +15,6 @@ Of the ~1,860 MW of extra demand in August–October 2023 (demand above Model A'
 |---|---|---|
 | 🌧️ **Failed monsoon** (farm pumping during the drought) | **~43–78%** | two natural experiments: 2016 and 2024 |
 | 💡❓ **Free electricity + other lasting changes** | **~22–57%** | the remainder |
-| *of which free electricity (official-data estimate)* | *≤13%* | *news figures and an old household share — reference only* |
 
 Two natural experiments bracket the answer:
 - **2016 — drought, no scheme:** demand rose +16.7% above expected (2023: +21.5%), so a drought alone can explain up
@@ -163,7 +162,8 @@ The findings were tested by trying to break them:
 | 2024 scheme, normal rain | the lasting increase was already there in 2023 | +12.3% remains | sets the **lower end** (~43%) |
 
 **On data trustworthiness:** rainfall and temperature come from ERA5 (European Centre for Medium-Range Weather
-Forecasts) via Open-Meteo, not from any Indian government source. The rain–demand relationship appears in years
+Forecasts) via Open-Meteo, not from any Indian government source. ERA5 is the standard weather input in
+electricity-demand research (e.g. Hunt & Bloomfield 2025), though local point rainfall can differ. The rain–demand relationship appears in years
 before the scheme (2016, 2019–2022). The hourly grid data agrees with KPTCL's separately reported daily energy totals
 (correlation 0.9995). The drought range uses grid and weather data only; only the "≤13%" free-electricity estimate
 relies on government household figures.
@@ -181,6 +181,9 @@ external review, the 2024 comparison was added as a lower bound, and the result 
   drought-driven demand was therefore likely *higher* than measured, and changes in rationing hours can look like
   changes in demand. Rationing schedules in 2016 also differed. This mainly affects the drought estimate, probably
   making it too low.
+- **Percentages assume a similar farm share.** Comparing 2016 and 2023 in percent assumes farm pumping was a similar
+  share of total load in both years; if it was a larger or smaller slice in 2016, the same drought would produce a
+  different percentage, and the ~78% upper end would move.
 - **Each bracket rests on one year.** 2016 is older, less reliable data with a different farm supply schedule; 2024
   includes a year of extra growth and the drought's after-effects (low groundwater, a hot summer).
 - **The scheme cannot be separated from other lasting growth** with grid data alone.
