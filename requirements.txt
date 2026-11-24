@@ -1,10 +1,11 @@
-pandas
-pyarrow
-numpy
-matplotlib
-statsmodels
-scikit-learn
-lightgbm
-requests
-jupyter
-holidays
+# Exact versions used for the published results (LightGBM results can change between versions)
+pandas==3.0.2
+pyarrow==24.0.0
+numpy==2.4.4
+matplotlib==3.10.9
+statsmodels==0.15.0
+scikit-learn==1.8.0
+lightgbm==4.6.0
+requests==2.33.1
+jupyter==1.1.1
+holidays==0.109

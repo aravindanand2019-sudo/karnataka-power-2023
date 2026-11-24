@@ -5,25 +5,27 @@
 
 ## ▲ The answer
 
-**The failed monsoon was the largest identifiable driver of the 2023 surge — 43–78% of it. The rest came
-from a lasting increase that began in August 2023 (free electricity plus other growth), which the data cannot
-cleanly split.**
+**Both causes were large, and the data cannot say which was larger. The failed monsoon explains roughly 21–78% of
+the 2023 surge; the rest came from a lasting increase that began in August 2023 (free electricity plus other growth),
+which the data cannot cleanly split.**
 
 Of the ~1,860 MW of extra demand in August–October 2023 (demand above Model A's expectation, i.e. +21.5%):
 
 | Cause | Share | How it is bounded |
 |---|---|---|
-| 🌧️ **Failed monsoon** (farm pumping during the drought) | **~43–78%** | two natural experiments: 2016 and 2024 |
-| 💡❓ **Free electricity + other lasting changes** | **~22–57%** | the remainder |
+| 🌧️ **Failed monsoon** (farm pumping during the drought) | **~21–78%** | two natural experiments: 2016 and 2024 |
+| 💡❓ **Free electricity + other lasting changes** | **~22–79%** | the remainder |
 
-Two natural experiments bracket the answer:
+Two natural experiments bracket the answer, loosely:
 - **2016 — drought, no scheme:** demand rose +16.7% above expected (2023: +21.5%), so a drought alone can explain up
   to ~78% → **upper end**.
-- **2024 — scheme, normal rain:** demand was *still* +12.3% above expected. If that lasting increase was already
-  present in 2023, the drought explains only ~43% → **lower end**.
+- **2024 — scheme, wet year:** demand was +17.1% above the rain-aware model (Model B), and +17.8% in 2025. If that
+  lasting increase was already fully present in Aug–Oct 2023, the drought explains only ~21% → **lower end**.
 
-The lasting increase switched on around August 2023 and never went away; it includes a +10–13% rise in evening
-household hours that fits a free-electricity effect. After the 2016 drought, by contrast, demand returned to normal.
+Two findings are robust across every model version tested: a drought alone (2016) produced a jump nearly as large
+as 2023's, and a **lasting +15–18% increase beyond what weather explains** switched on around August 2023 and never
+went away. It includes a +10–13% rise in evening household hours that fits a free-electricity effect. After the 2016
+drought, by contrast, demand returned to normal.
 
 > **Two measures are used in this report.** *Excess over Model A* = demand above what calendar, heat and growth
 > predict (it includes the drought); for Aug–Oct 2023 it is **+21.5%**. *Excess over Model B* = demand above a model
@@ -101,15 +103,15 @@ absence of one.
 
 ### 4.3 Two natural experiments bracket the drought share
 
-Using the same method (excess over Model A, Aug–Oct):
+| Year | Situation | Excess over Model A (ignores rain) | Excess over Model B (includes rain) |
+|---|---|---|---|
+| 2016 | drought, **no scheme** | **+16.7%** | +13.8% |
+| 2017 | normal rain, no scheme | −2.4% | −2.6% |
+| 2023 | drought + scheme | **+21.5%** | +15.6% |
+| 2024 | wet + scheme | +12.3% | **+17.1%** |
+| 2025 | wet + scheme | +14.4% | +17.8% |
 
-| Year | Situation | Demand above expected |
-|---|---|---|
-| 2016 | drought, **no scheme** | **+16.7%** |
-| 2017 | normal rain, no scheme | −2.4% |
-| 2023 | drought + scheme | **+21.5%** |
-| 2024 | normal rain + scheme | **+12.3%** |
-| 2025 | normal rain + scheme | +14.4% |
+The 2016 and 2017 figures come from a model trained on 2011–2015; the others from the main model (2015–2022).
 
 **Were the two droughts comparable?** Farm-belt rainfall (7 towns, ERA5) against the 2011–2022 average:
 
@@ -125,8 +127,19 @@ In the Aug–Oct window used here the two shortfalls are almost identical. 2023 
 
 - **2016** shows what a drought *alone* does. During August–December, the 2016 and 2023 curves move almost
   together → the drought could explain up to **~78%** of 2023's excess.
-- **2024** shows what the lasting increase does *without* a drought. If it was already present in Aug–Oct 2023,
-  the drought explains only **~43%**. (Using 2025 instead gives ~33%, but 2025 includes another year of extra growth.)
+- **2024** shows what the lasting increase does *without* a drought. 2024 was wet, and a model that ignores rain
+  over-predicts in wet years, so the lasting increase must be measured against Model B: **+17.1%**. If it was already
+  fully present in Aug–Oct 2023, the drought explains only **(21.5 − 17.1) ÷ 21.5 ≈ 21%** (28% if measured in MW;
+  17% using 2025).
+
+**Correction:** an earlier version used 2024's excess over Model A (+12.3%) and got a lower end of 43%. That figure
+is the lasting increase *minus* the effect of 2024's extra rain, so it counted wet weather in 2024 as part of the
+drought in 2023.
+
+**The two ends do not fit together neatly.** If the full +17% lasting increase was present in Aug–Oct 2023, almost
+nothing is left for the drought, yet 2016 shows a drought alone adds about as much. Both cannot fully hold. One
+possible reason is that supply was rationed in October 2023 (see Limitations), which capped measured load, so the two
+effects may not add up in the grid data. The truth is likely between the ends, but the data cannot say where.
 
 ![2016 vs 2023](figures/07_2016_vs_2023.png)
 
@@ -159,7 +172,13 @@ The findings were tested by trying to break them:
 | Placebo years (2015, 2021, 2022) | the method finds fake effects | ≤ ±4.5% excess over Model B (2023: +15.6%) | ✅ holds |
 | Drop 8 days where data sources disagree | results change | no change | ✅ holds |
 | 2016 drought, no scheme | a drought alone gives the same jump | it does (+16.7% vs +21.5%) | sets the **upper end** (~78%) |
-| 2024 scheme, normal rain | the lasting increase was already there in 2023 | +12.3% remains | sets the **lower end** (~43%) |
+| 2024 scheme, wet year (rain-adjusted) | the lasting increase was already there in 2023 | +17.1% over Model B | sets the **lower end** (~21%) |
+| Re-fit without the `year` feature | the result depends on model setup | excesses over Model A fall ~6 points; brackets move to 57–88% (not rain-adjusted); lasting increase stays +15–18% | ⚠️ **the split is model-dependent** |
+
+**Why test `year`:** trees cannot extrapolate it, so every 2023+ prediction uses the "2022" setting. Model A does not
+see rain and may carry wet 2022's lower demand forward. Without `year`, Model A's backtest error improves (±6.1% vs
+±7.6%), but Model B then predicts *less* demand in the 2023 drought than without rain, a wrong-sign result, so the
+main models keep `year`. What survives both versions: the 2016 drought effect and the lasting increase.
 
 **On data trustworthiness:** rainfall and temperature come from ERA5 (European Centre for Medium-Range Weather
 Forecasts) via Open-Meteo, not from any Indian government source. ERA5 is the standard weather input in
@@ -168,13 +187,20 @@ before the scheme (2016, 2019–2022). The hourly grid data agrees with KPTCL's 
 (correlation 0.9995). The drought range uses grid and weather data only; only the "≤13%" free-electricity estimate
 relies on government household figures.
 
-**Revision note:** an earlier version of this report gave a single best estimate of ~75% for the drought. After an
-external review, the 2024 comparison was added as a lower bound, and the result is now reported as a range.
+**Revision note:** the first version gave a single best estimate of ~75% for the drought. After a first external
+review, 2024 was added as a lower bound (43–78%). A third review found that the 2024 bound counted 2024's wet weather
+as drought; correcting it gives 21–78%, and the headline no longer claims the drought was the largest driver.
 
 ## 6. Limitations
 
-- **Wide range.** The robust result is that the failed monsoon was the largest identifiable driver — not a precise
-  split.
+- **Wide range.** The robust result is that both causes were large, not a precise split or a ranking.
+- **Model-dependent split.** Dropping the `year` feature moves the brackets by 10+ points. Model A's typical monthly
+  error on unseen years is ±7.6% (Model B: ±4%), and the brackets use Model A, so each end is uncertain by several
+  points.
+- **The upper end relies on a model trained on shortage years.** The 2016 model is trained on 2011–2015, when grid
+  frequency was below 49.9 Hz in 31–77% of hours in 2011–2013 (≈2% in 2016), and it has no backtest of its own.
+  Suppressed demand in training could make the 2016 excess, and so the ~78%, too high. 2017's result (−2.4%) is
+  partly reassuring.
 - **Load is supplied power, not true demand.** KPTCL data records electricity actually delivered. In October 2023
   farm supply was rationed: farmers reported 1–2 hours a day against a promised 7, protests followed, and HESCOM
   later planned 5–6 hours of three-phase supply in northern districts (Deccan Herald, 14 and 26 Oct 2023). Real
@@ -203,11 +229,13 @@ external review, the 2024 comparison was added as a lower bound, and the result 
    daily totals, kept gaps as missing (`reports/validation_log.csv`).
 3. **Counterfactual models** (Cicala 2020; Brodersen et al. 2015) — trend × LightGBM, trained only on 2015–2022:
    Model A (calendar, holidays, temperature, growth trend) and Model B (+ rain anomalies). Backtested on unseen years:
-   Model B's typical monthly error ±4%. Pre-scheme check (13–31 Jul 2023): +3.3%, within error.
+   typical monthly error ±7.6% for Model A and ±4% for Model B. Pre-scheme check (13–31 Jul 2023): +3.3% over Model B,
+   within error.
 4. **Separating causes** — rain regression within Aug–Dec 2023 (scheme constant), hour-of-day fingerprints,
    weekday/Sunday comparison, change-point search, external household data.
-5. **Robustness** — trend sensitivity, placebo years, flagged-day exclusion, and two natural experiments
-   (2016: drought without scheme; 2024: scheme without drought) that bracket the drought share.
+5. **Robustness** — trend sensitivity, placebo years, flagged-day exclusion, re-fit without `year`, and two natural
+   experiments (2016: drought without scheme; 2024: scheme without drought, rain-adjusted) that bracket the drought
+   share.
 
 The analysis plan, including hypotheses and the tests that would prove them wrong, was written at the start, before
 the models were built (`00_analysis_plan.md`); every later change is logged there. The repository was first committed
@@ -223,7 +251,7 @@ after the analysis was complete, so Git history cannot prove this order.
 | `04_the_2023_shock` | Description | size, timing, hourly pattern, weather, supply |
 | `05_counterfactual_model` | Evaluation | Models A and B, backtests, decomposition |
 | `06_separating_causes` | Evaluation | rain regression, fingerprints, external limits |
-| `07_robustness_checks` | Evaluation | trend, placebo, flagged days, 2016 |
+| `07_robustness_checks` | Evaluation | trend, placebo, flagged days, 2016 and 2024 brackets, `year` check |
 
 **Sources:** KPTCL load curve reports (via [Vonter/kptcl-load-curve](https://github.com/Vonter/kptcl-load-curve), ODbL);
 [Open-Meteo](https://open-meteo.com/) (ERA5); Karnataka Economic Survey 2017-18 (category shares, via ThePrint);

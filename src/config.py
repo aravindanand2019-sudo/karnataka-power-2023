@@ -7,7 +7,9 @@ DATA_INTERIM = ROOT / "data" / "interim"
 DATA_PROCESSED = ROOT / "data" / "processed"
 FIGURES = ROOT / "reports" / "figures"
 
-KPTCL_BASE = "https://raw.githubusercontent.com/Vonter/kptcl-load-curve/main/data"
+# Pinned to the last upstream commit (2026-08-25) before our download, so the data cannot change under us
+KPTCL_COMMIT = "ed46df89db0fb6f82dd79336e41b058b7c594d44"
+KPTCL_BASE = f"https://raw.githubusercontent.com/Vonter/kptcl-load-curve/{KPTCL_COMMIT}/data"
 KPTCL_FILES = ["kptcl", "kptcl-stations", "kptcl-reservoirs", "kptcl-outages", "kptcl-daily-summary"]
 
 # Weather points: farm belt + Bengaluru (lat, lon)
