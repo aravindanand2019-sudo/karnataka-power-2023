@@ -1,0 +1,14 @@
+dataset,check,rows_affected,action
+load,duplicate timestamps (hour-24 overlap),5344,kept the day's own hour-0 reading
+load,...of which values disagree by >1 MW,101,kept hour-0 reading (documented)
+load,"frequency outside (48.5, 51.5) Hz",3,set to NaN
+load,frequency missing in raw,27,left as NaN
+load,missing hours (gaps),6611,"kept as NaN, not filled"
+load,isolated 1-hour spikes (>25% in and out),2,set to NaN
+load,days where hourly vs Grand Total differ >3.0%,80,flagged (kept); excluded in robustness checks
+generation,"duplicate (date, station) rows",38,kept first
+generation,negative energy in 'coal',17,kept (auxiliary consumption when plant idle)
+generation,negative energy in 'hydro',1,kept (auxiliary consumption when plant idle)
+generation,solar/wind not reported separately before 2014-08-25,1292,left as NaN for those days
+reservoirs,storage % outside 0-110,1,set to NaN
+weather,impossible rain/temperature values,0,set to NaN

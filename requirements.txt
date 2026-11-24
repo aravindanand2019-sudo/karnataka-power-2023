@@ -1,0 +1,10 @@
+pandas
+pyarrow
+numpy
+matplotlib
+statsmodels
+scikit-learn
+lightgbm
+requests
+jupyter
+holidays
