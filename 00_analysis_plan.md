@@ -45,6 +45,7 @@ the failed monsoon (farm pumping) or the Gruha Jyothi free-power scheme (househo
 ## Changes log
 | Date | Change | Reason |
 |---|---|---|
+| 2026-11-24 | After second external review: no change to results. Added the **supplied-load vs true-demand** limitation (Oct 2023 farm rationing), a 2016 vs 2023 rainfall comparison, baseline labels on every headline number, and clarified that "July 2023" means 13–31 July. | Reviewer flagged these as gaps or possible inconsistencies. |
 | 2026-11-24 | After external review: add **2024** (scheme, normal rain) as a second natural experiment giving the **lower end** of the drought share, alongside 2016 (upper end). Report the drought share as a **range**, not a single best estimate; treat the ≤13% free-electricity figure as a reference only. | The 2024 persistence was set aside as "a separate question" although it changes the answer; headline was more confident than the evidence. |
 | 2026-11-24 | Add **2016** (dry Aug–Oct, 250 mm, no scheme) as an extra natural comparison in Notebook 07. Temperature control is **required** in Notebooks 05–06 (2023 Aug–Oct was ~2 °C hotter). | Found in Notebook 04 (description). Added before any causal model was run. |
 | 2026-11-23 | Known gap is **3 Jan – 12 Jul 2023** (not Feb–Jun). Counterfactual model will be trained on data up to **31 Dec 2022**; 13–31 Jul 2023 used only as a pre-scheme check. | Found in Notebook 01 coverage check. Decided before running any analysis of the 2023 surge. |

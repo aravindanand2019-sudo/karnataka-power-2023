@@ -9,7 +9,7 @@
 from a lasting increase that began in August 2023 (free electricity plus other growth), which the data cannot
 cleanly split.**
 
-Of the ~1,860 MW of extra demand in August–October 2023:
+Of the ~1,860 MW of extra demand in August–October 2023 (demand above Model A's expectation, i.e. +21.5%):
 
 | Cause | Share | How it is bounded |
 |---|---|---|
@@ -28,7 +28,8 @@ household hours that fits a free-electricity effect. After the 2016 drought, by 
 
 > **Two measures are used in this report.** *Excess over Model A* = demand above what calendar, heat and growth
 > predict (it includes the drought); for Aug–Oct 2023 it is **+21.5%**. *Excess over Model B* = demand above a model
-> that also accounts for rainfall; for Aug–Oct 2023 it is **+15.6%**.
+> that also accounts for rainfall; for Aug–Oct 2023 it is **+15.6%**. Separately, *growth vs 2022* (e.g. "+49% in
+> August") compares with the same months a year earlier and includes normal growth, so it is always larger.
 
 ---
 
@@ -111,6 +112,18 @@ Using the same method (excess over Model A, Aug–Oct):
 | 2024 | normal rain + scheme | **+12.3%** |
 | 2025 | normal rain + scheme | +14.4% |
 
+**Were the two droughts comparable?** Farm-belt rainfall (7 towns, ERA5) against the 2011–2022 average:
+
+| | Jun–Oct | Aug–Oct |
+|---|---|---|
+| 2016 | 765 mm (−10%) | 250 mm (**−46%**) |
+| 2023 | 596 mm (−30%) | 256 mm (**−45%**) |
+| 2024 | 1,099 mm (+29%) | 589 mm (+26%) |
+
+In the Aug–Oct window used here the two shortfalls are almost identical. 2023 was drier earlier in the season
+(June–July), so groundwater and reservoirs were lower going in. This would make 2023's drought effect larger than
+2016's and pushes the true drought share towards the upper end, not below it.
+
 - **2016** shows what a drought *alone* does. During August–December, the 2016 and 2023 curves move almost
   together → the drought could explain up to **~78%** of 2023's excess.
 - **2024** shows what the lasting increase does *without* a drought. If it was already present in Aug–Oct 2023,
@@ -120,7 +133,8 @@ Using the same method (excess over Model A, Aug–Oct):
 
 ### 4.4 A lasting increase switched on in August 2023 — and it includes household hours
 
-- The excess over Model B was **+3.3% in July 2023** (normal), then **+7% to +17% in every month** from August 2023
+- The excess over Model B was **+3.3% in 13–31 July 2023** (normal; hourly data resumes on 13 July after the
+  January–July gap), then **+7% to +17% in every month** from August 2023
   to June 2024, including months with no drought.
 - **Evening household hours** were +10% to +13% above expected in 2023, 2024 and 2025, compared with −12% to +7% in
   pre-scheme test years. This **fits a free-electricity effect**, although faster general growth could also
@@ -161,6 +175,12 @@ external review, the 2024 comparison was added as a lower bound, and the result 
 
 - **Wide range.** The robust result is that the failed monsoon was the largest identifiable driver — not a precise
   split.
+- **Load is supplied power, not true demand.** KPTCL data records electricity actually delivered. In October 2023
+  farm supply was rationed: farmers reported 1–2 hours a day against a promised 7, protests followed, and HESCOM
+  later planned 5–6 hours of three-phase supply in northern districts (Deccan Herald, 14 and 26 Oct 2023). Real
+  drought-driven demand was therefore likely *higher* than measured, and changes in rationing hours can look like
+  changes in demand. Rationing schedules in 2016 also differed. This mainly affects the drought estimate, probably
+  making it too low.
 - **Each bracket rests on one year.** 2016 is older, less reliable data with a different farm supply schedule; 2024
   includes a year of extra growth and the drought's after-effects (low groundwater, a hot summer).
 - **The scheme cannot be separated from other lasting growth** with grid data alone.
@@ -186,8 +206,9 @@ external review, the 2024 comparison was added as a lower bound, and the result 
 5. **Robustness** — trend sensitivity, placebo years, flagged-day exclusion, and two natural experiments
    (2016: drought without scheme; 2024: scheme without drought) that bracket the drought share.
 
-The analysis plan, including hypotheses and the tests that would prove them wrong, was written before the analysis
-(`00_analysis_plan.md`); every later change is logged there.
+The analysis plan, including hypotheses and the tests that would prove them wrong, was written at the start, before
+the models were built (`00_analysis_plan.md`); every later change is logged there. The repository was first committed
+after the analysis was complete, so Git history cannot prove this order.
 
 ## Appendix
 
@@ -203,5 +224,5 @@ The analysis plan, including hypotheses and the tests that would prove them wron
 
 **Sources:** KPTCL load curve reports (via [Vonter/kptcl-load-curve](https://github.com/Vonter/kptcl-load-curve), ODbL);
 [Open-Meteo](https://open-meteo.com/) (ERA5); Karnataka Economic Survey 2017-18 (category shares, via ThePrint);
-Deccan Herald, Varthabharati and Mangalore Today (household consumption, Aug 2023–Jul 2024); IEA and Down To Earth
+Deccan Herald, Varthabharati and Mangalore Today (household consumption, Aug 2023–Jul 2024); Deccan Herald, Oct 2023 (farm supply rationing); IEA and Down To Earth
 (farm load shifted to daytime); Cicala (2020), Brodersen et al. (2015), Hunt & Bloomfield (2025).

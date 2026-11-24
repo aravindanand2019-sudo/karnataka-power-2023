@@ -2,7 +2,7 @@
 
 **What really caused Karnataka's 2023 electricity surge — evidence from 15 years of hourly grid data**
 
-In August 2023, Karnataka's electricity demand jumped by ~50%. The same month, the state launched **Gruha Jyothi**
+In August 2023, Karnataka's electricity demand jumped by ~50% compared with August 2022. The same month, the state launched **Gruha Jyothi**
 (free electricity for households) — and the **monsoon failed**. Was the surge caused by free power or by the drought?
 
 ## The answer
@@ -10,15 +10,20 @@ In August 2023, Karnataka's electricity demand jumped by ~50%. The same month, t
 **The failed monsoon was the largest identifiable driver — roughly 40–75% of the surge.** The rest came from a
 lasting increase that began in August 2023 (free electricity plus other growth), which the data cannot cleanly split.
 
-Of the ~1,860 MW of extra demand in Aug–Oct 2023:
+Of the ~1,860 MW of extra demand in Aug–Oct 2023 (demand above what calendar, heat and normal growth predict,
+i.e. +21.5% above the "Model A" baseline):
 
 | Cause | Share |
 |---|---|
 | 🌧️ Failed monsoon (farm pumping during the drought) | **~43–78%** |
 | 💡❓ Free electricity + other lasting changes | **~22–57%** |
 
-Two natural experiments bracket the answer: **2016** (drought, no scheme) shows a drought alone can explain up to
-~78%; **2024** (scheme, normal rain) was still +12.3% above expected, so the drought share could be as low as ~43%.
+Two natural experiments bracket the answer: **2016** (drought, no scheme; Aug–Oct farm-belt rain −46% vs normal,
+almost the same as 2023's −45%) shows a drought alone can explain up to ~78%; **2024** (scheme, normal rain) was still
++12.3% above expected, so the drought share could be as low as ~43%.
+
+> **Which baseline?** "+50%" = vs the same months of 2022. "+21.5%" and "1,860 MW" = vs Model A (expected demand
+> without rain). "+15.6%" = vs Model B (expected demand with rain). See the report.
 
 ![2016 vs 2023](reports/figures/07_2016_vs_2023.png)
 
@@ -29,7 +34,8 @@ Two natural experiments bracket the answer: **2016** (drought, no scheme) shows 
 2. **The surge was in farm-pump hours** (day +60%, night +54% vs 2022), while evening household demand rose the same
    as in later years when rain was normal (+24% vs +21–26%).
 3. **A drought year without the scheme (2016) looked almost the same** (+16.7% vs +21.5% above expected).
-4. **A lasting increase switched on in August 2023 and stayed** — absent in July 2023, present every month after,
+4. **A lasting increase switched on in August 2023 and stayed** — absent in 13–31 July 2023 (the first hourly data
+   after a gap from January), present every month after,
    including evening household hours (+10–13% above expected in 2023–25). This fits a free-electricity effect, but the
    grid data cannot separate it from other growth. After the 2016 drought, by contrast, demand returned to normal.
 
@@ -54,8 +60,9 @@ Two natural experiments bracket the answer: **2016** (drought, no scheme) shows 
    (2016 and 2024) that bracket the drought share.
 
 Methods follow Cicala (2020, *A View from the Grid*), Brodersen et al. (2015, *CausalImpact*) and Card & Krueger's
-natural-experiment logic. Hypotheses and tests were written down **before** the analysis in
-[`00_analysis_plan.md`](00_analysis_plan.md).
+natural-experiment logic. Hypotheses and tests were written down at the start, before the models were built, in
+[`00_analysis_plan.md`](00_analysis_plan.md). The repo was first committed after the analysis was finished, so Git
+history cannot prove this order; the plan's change log records every later revision.
 
 ## Repo structure
 
@@ -78,7 +85,9 @@ python -m jupyter nbconvert --to notebook --execute --inplace 01_data_collection
 
 ## Limitations
 
-The robust result is that the **failed monsoon was the largest identifiable driver**, not a precise split. Each bound
+The robust result is that the **failed monsoon was the largest identifiable driver**, not a precise split. Grid load
+measures power that was *supplied*, not true demand: in Oct 2023 farm supply was rationed (farmers reported 1–2 hours
+against a promised 7), so real drought demand was likely higher than measured. Each bound
 rests on one comparison year (2016, 2024), hourly data is missing for Jan–Jul 2023, the scheme cannot be separated
 from other lasting growth, and the hour-of-day mapping (households vs farms) is approximate. See the
 [report](reports/final_report.md#6-limitations).
