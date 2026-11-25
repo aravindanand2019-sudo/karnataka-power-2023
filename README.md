@@ -1,25 +1,37 @@
 # ⚡ Free Power or Failed Monsoon?
 
-**What really caused Karnataka's 2023 electricity surge — evidence from 15 years of hourly grid data**
+**What really caused Karnataka's 2023 electricity surge — evidence from 15 years of hourly grid data and official
+electricity sales**
 
 In August 2023, Karnataka's electricity demand jumped by ~50% compared with August 2022. The same month, the state launched **Gruha Jyothi**
 (free electricity for households) — and the **monsoon failed**. Was the surge caused by free power or by the drought?
 
 ## The answer
 
-**Both were large, and the data cannot say which was larger.** The failed monsoon explains roughly **24–78%** of the
-surge. The rest came from a lasting increase that began in August 2023 (free electricity plus other growth), which the
-data cannot cleanly split.
+**The failed monsoon was the main cause. Free electricity was a small part.**
 
-Of the ~1,860 MW of extra demand in Aug–Oct 2023 (demand above what calendar, heat and normal growth predict,
-i.e. +21.5% above the "Model A" baseline):
+Official sales by customer type (audited ESCOM filings and KERC's Tariff Order 2025), FY2023-24 vs FY2022-23:
 
-| Cause | Share |
-|---|---|
-| 🌧️ Failed monsoon (farm pumping during the drought) | **~24–78%** |
-| 💡❓ Free electricity + other lasting changes | **~22–76%** |
+| Where the extra electricity went | Increase | Share of the increase |
+|---|---|---|
+| 🚜 Irrigation pump sets (drought) | **+9,974 MU (+48%)** | **69%** |
+| 🏠 Households (the only group that gets free electricity) | +1,839 MU (+13%) | 13% |
+| 🏭 Everything else | +2,736 MU (+10%) | 19% |
+| **Total** | **+14,549 MU (+23.5%)** | 100% |
 
-Two natural experiments bracket the answer, loosely:
+The pump-set increase was **5.4 times** the household increase, and the pattern holds in all five power companies.
+After removing normal household growth, the scheme accounts for roughly **7–10%** of the increase.
+
+![Where the extra electricity went](reports/figures/08_sales_increase.png)
+
+### Why the grid data alone could not answer it
+
+The hourly grid data sees only *total* demand, and the drought and the scheme started in the same month. From grid
+data alone, the drought's share of the Aug–Oct 2023 excess (~1,860 MW above what calendar, heat and normal growth
+predict, i.e. +21.5% above the "Model A" baseline) could only be bracketed at **~24–78%**. Sales by customer type
+separate the two causes; the grid analysis supports the result:
+
+Two natural experiments in the grid data:
 - **2016** (drought, no scheme; Aug–Oct farm-belt rain −46% vs normal, almost the same as 2023's −45%): demand rose
   +16.7% above expected, against 2023's +21.5%. So a drought alone can explain up to **~78%**.
 - **2024** (scheme, wet year): after removing the effect of the extra rain, demand was still **+16.4% above
@@ -28,6 +40,8 @@ Two natural experiments bracket the answer, loosely:
 
 **What is robust:** a drought alone (2016) produced a jump nearly as large as 2023's, *and* a lasting +14–17%
 increase beyond what weather explains started in August 2023 and has not gone away, in every model version tested.
+The sales data shows that this lasting increase is mostly **not households**: households grew +13% in FY2023-24,
+against +48% for pump sets.
 
 > **Which baseline?** "+50%" = vs the same months of 2022. "+21.5%" and "1,860 MW" = vs Model A (a model that ignores
 > rainfall). "+15.6%" = vs Model B (a model that includes rainfall); the same gap is +16.4% if expressed on Model A's
@@ -67,6 +81,11 @@ increase beyond what weather explains started in August 2023 and has not gone aw
    external household data.
 5. **Robustness:** faster-growth scenarios, placebo years, excluding doubtful days, re-fitting without the `year`
    feature, and two natural experiments (2016 and 2024) that bracket the drought share.
+6. **Sales by customer type:** FY2022-23 and FY2023-24 actual sales for households and pump sets from all five
+   power companies' audited filings and KERC's Tariff Order 2025, transcribed with sources in
+   [`references/escom_sales_by_category.csv`](references/escom_sales_by_category.csv). The five companies' FY24
+   figures add up exactly to KERC's state totals, and the overall growth (+24.3%, +12.2% excluding pump sets) matches
+   KERC's own statement.
 
 Methods follow Cicala (2020, *A View from the Grid*), Brodersen et al. (2015, *CausalImpact*) and Card & Krueger's
 natural-experiment logic. Hypotheses and tests were written down at the start, before the models were built, in
@@ -77,7 +96,8 @@ history cannot prove this order; the plan's change log records every later revis
 
 ```
 00_analysis_plan.md   hypotheses & tests, written before the models were built (with change log)
-notebooks/            01–02 Validate · 03–04 Describe · 05–07 Evaluate
+notebooks/            01–02 Validate · 03–04 Describe · 05–08 Evaluate
+references/           escom_sales_by_category.csv (official sales by customer type, with sources)
 src/                  data.py · clean.py · features.py · model.py · plots.py · config.py
 reports/              final_report.md · validation_log.csv · figures/
 data/                 raw → processed (not in Git; recreated by notebook 01)
@@ -89,12 +109,16 @@ data/                 raw → processed (not in Git; recreated by notebook 01)
 pip install -r requirements.txt
 cd notebooks
 python -m jupyter nbconvert --to notebook --execute --inplace 01_data_collection.ipynb
-# then 02 … 07 in order (07 takes several minutes)
+# then 02 … 08 in order (07 takes several minutes; 08 needs only references/ and runs in seconds)
 ```
 
 ## Limitations
 
-The range is wide, and **the split depends on modelling choices**: re-fitting without the `year` feature moves the
+**Sales data:** most pump sets are not metered, so pump-set sales are estimates (some line losses may be counted as
+pump use); household sales are metered. The sales data is annual (April–March), so the Aug–Oct 2023 peak cannot be
+isolated, and FY2022-23 was a wet year with low pump use. FY2024-25 actuals are not yet published.
+
+**Grid data:** the drought range from grid data alone is wide, and **the split depends on modelling choices**: re-fitting without the `year` feature moves the
 brackets by 10+ points, although the lasting increase does not change. Grid load measures power that was *supplied*,
 not true demand: in Oct 2023 farm supply was rationed (farmers reported 1–2 hours against a promised 7), so real
 drought demand was likely higher than measured. The 2016 model is trained on 2011–2015, years of power shortage, and
@@ -102,9 +126,9 @@ has no backtest of its own. Each bound rests on one comparison year (2016, 2024)
 2023, the scheme cannot be separated from other lasting growth, and the hour-of-day mapping (households vs farms) is
 approximate. See the [report](reports/final_report.md#6-limitations).
 
-**Revision history:** the headline went from "~75% drought" to "43–78%" to "24–78%" after four external reviews.
-The main fix: the 2024 comparison had counted 2024's wet weather as part of the 2023 drought. All shares are now
-percentages of the same baseline (Model A's expected demand).
+**Revision history:** from grid data, the headline went from "~75% drought" to "43–78%" to "24–78%" after four
+external reviews (the main fix: the 2024 comparison had counted 2024's wet weather as part of the 2023 drought).
+Official sales by customer type (Notebook 08) then separated the causes and gave the final answer.
 Details are in the analysis plan's change log.
 
 ## Data sources & credits
@@ -112,4 +136,6 @@ Details are in the analysis plan's change log.
 - Grid data: KPTCL daily load-curve reports, parsed by [Vonter/kptcl-load-curve](https://github.com/Vonter/kptcl-load-curve) (ODbL)
 - Weather: [Open-Meteo](https://open-meteo.com/) historical archive (ERA5, CC BY 4.0)
 - Holidays: [`holidays`](https://pypi.org/project/holidays/) Python package
+- Sales by customer type: KERC Combined Tariff Order 2025 (Tables 4.3A–F) and the ESCOMs' Tariff Filings 2024 (APR FY23),
+  from [kerc.karnataka.gov.in](https://kerc.karnataka.gov.in)
 - Context: Karnataka Economic Survey, Deccan Herald, IEA, Down To Earth (see report)

@@ -1,0 +1,11 @@
+escom,fy,households_mu,pumpsets_mu,total_lt_ht_mu,total_grand_mu,households_detail,source
+BESCOM,FY2022-23,8175.87,6278.3,29356.46,29356.46,LT-1 BJ/KJ>=40 56.46 + LT-2a 7936.66 + LT-1 BJ/KJ<40 182.75,"BESCOM Tariff Filing 2024, Ch.3 APR FY23, Table 3.1 (actual, audited)"
+MESCOM,FY2022-23,1649.84,1643.06,5524.11,5598.36,LT-1 BJ/KJ<=18/40 33.46 + LT-1 BJ/KJ>18/40 16.97 + LT-2a 1599.41,"MESCOM Tariff Filing 2024, Format D-2, actuals as per audited accounts 2022-23 (Total A+B)"
+CESC,FY2022-23,1215.36,2679.7,6531.99,6537.98,LT-1 BJ/KJ<=18/40 90.92 + LT-1 BJ/KJ>18/40 21.40 + LT-2a 1103.04,"CESC Tariff Filing 2024, Format D-2, actuals as per audited accounts 2022-23 (Total A+B)"
+HESCOM,FY2022-23,1869.65,6476.23,11957.74,11957.74,LT-2a incl. BJ/KJ >40 units 1727.83 + BJ/KJ up to 40 units 141.82,"HESCOM Tariff Filing 2024, Ch.4 APR FY23, Sales table (actual excluding open access)"
+GESCOM,FY2022-23,1620.76,3519.08,8440.51,8440.51,BJ/KJ >40 units 5.37 + LT-2a 1347.00 + BJ/KJ up to 40 units 268.39,"GESCOM Tariff Filing 2024, Ch.3 APR FY23, Table 45 (tariff-wise actual sales FY23)"
+BESCOM,FY2023-24,9340.66,10221.54,36185.07,36185.07,LT-1 (domestic incl. BJ/KJ),"KERC Combined Tariff Order 2025, Table 4.3A (actuals, LT+HT total)"
+MESCOM,FY2023-24,1830.33,2534.07,6834.77,6877.42,LT-1 (domestic incl. BJ/KJ),"KERC Combined Tariff Order 2025, Table 4.3B (actuals, LT+HT total)"
+CESC,FY2023-24,1362.68,4364.79,8667.12,8673.59,LT-1 (domestic incl. BJ/KJ),"KERC Combined Tariff Order 2025, Table 4.3C (actuals, LT+HT total)"
+HESCOM,FY2023-24,2098.23,8933.42,15095.3,15596.97,LT-1 (domestic incl. BJ/KJ),"KERC Combined Tariff Order 2025, Table 4.3D (actuals, LT+HT total)"
+GESCOM,FY2023-24,1738.13,4516.43,9577.45,9577.45,LT-1 (domestic incl. BJ/KJ),"KERC Combined Tariff Order 2025, Table 4.3E (actuals, LT+HT total)"
