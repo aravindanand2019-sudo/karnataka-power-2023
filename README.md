@@ -30,7 +30,8 @@ Two natural experiments bracket the answer, loosely:
 increase beyond what weather explains started in August 2023 and has not gone away, in every model version tested.
 
 > **Which baseline?** "+50%" = vs the same months of 2022. "+21.5%" and "1,860 MW" = vs Model A (a model that ignores
-> rainfall). "+15.6%" = vs Model B (a model that includes rainfall). See the report.
+> rainfall). "+15.6%" = vs Model B (a model that includes rainfall); the same gap is +16.4% if expressed on Model A's
+> baseline, as in the 2016/2024 comparisons. See the report.
 
 ![2016 vs 2023](reports/figures/07_2016_vs_2023.png)
 

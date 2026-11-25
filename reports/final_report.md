@@ -30,7 +30,7 @@ drought, by contrast, demand returned to normal.
 
 > **Two measures are used in this report.** *Excess over Model A* = demand above what calendar, heat and growth
 > predict (it includes the drought); for Aug–Oct 2023 it is **+21.5%**. *Excess over Model B* = demand above a model
-> that also accounts for rainfall; for Aug–Oct 2023 it is **+15.6%**. Separately, *growth vs 2022* (e.g. "+49% in
+> that also accounts for rainfall; for Aug–Oct 2023 it is **+15.6%** (+16.4% if expressed on Model A's baseline, as in §4.3). Separately, *growth vs 2022* (e.g. "+49% in
 > August") compares with the same months a year earlier and includes normal growth, so it is always larger.
 
 ---
