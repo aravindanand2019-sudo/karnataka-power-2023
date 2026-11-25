@@ -321,7 +321,9 @@ after the analysis was complete, so Git history cannot prove this order.
 | `07_robustness_checks` | Evaluation | trend, placebo, flagged days, 2016 and 2024 brackets, `year` check |
 | `08_sales_data_answer` | Evaluation | official sales by customer type, FY23 vs FY24, by company |
 
-**Sources:** KPTCL load curve reports (via [Vonter/kptcl-load-curve](https://github.com/Vonter/kptcl-load-curve), ODbL);
+**Sources:** Matthew, V. (2026). *KPTCL Load Curve* (Version 2026.07.19) [Dataset].
+https://github.com/Vonter/kptcl-load-curve (commit ed46df8), from the KPTCL Load Curve portal. *Contains information
+from KPTCL Load Curve, which is made available here under the Open Database License (ODbL).*
 [Open-Meteo](https://open-meteo.com/) (ERA5); Karnataka Economic Survey 2017-18 (category shares, via ThePrint);
 KERC Combined Tariff Order 2025 and ESCOM Tariff Filings 2024 (sales by category, FY23–FY24); Deccan Herald,
 Varthabharati and Mangalore Today (household consumption, Aug 2023–Jul 2024); Deccan Herald, Oct 2023 (farm supply rationing); IEA and Down To Earth

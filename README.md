@@ -146,7 +146,13 @@ Details are in the analysis plan's change log.
 
 ## Data sources & credits
 
-- Grid data: KPTCL daily load-curve reports, parsed by [Vonter/kptcl-load-curve](https://github.com/Vonter/kptcl-load-curve) (ODbL)
+- Grid data: Matthew, V. (2026). *KPTCL Load Curve* (Version 2026.07.19) [Dataset].
+  [github.com/Vonter/kptcl-load-curve](https://github.com/Vonter/kptcl-load-curve) (used at commit
+  [`ed46df8`](https://github.com/Vonter/kptcl-load-curve/tree/ed46df89db0fb6f82dd79336e41b058b7c594d44)), parsed from
+  the [KPTCL Load Curve portal](https://loadcurve.kptcl.net/LoadCurveUpload/lcdownloadview.asp).
+  *Contains information from KPTCL Load Curve, which is made available here under the
+  [Open Database License (ODbL)](http://opendatacommons.org/licenses/odbl/1.0/).* Some individual contents are
+  copyright KPTCL.
 - Weather: [Open-Meteo](https://open-meteo.com/) historical archive (ERA5, CC BY 4.0)
 - Holidays: [`holidays`](https://pypi.org/project/holidays/) Python package
 - Sales by customer type: KERC Combined Tariff Order 2025 (Tables 4.3A–F) and the ESCOMs' Tariff Filings 2024 (APR FY23),
