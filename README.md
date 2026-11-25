@@ -7,7 +7,7 @@ In August 2023, Karnataka's electricity demand jumped by ~50% compared with Augu
 
 ## The answer
 
-**Both were large, and the data cannot say which was larger.** The failed monsoon explains roughly **21–78%** of the
+**Both were large, and the data cannot say which was larger.** The failed monsoon explains roughly **24–78%** of the
 surge. The rest came from a lasting increase that began in August 2023 (free electricity plus other growth), which the
 data cannot cleanly split.
 
@@ -16,16 +16,17 @@ i.e. +21.5% above the "Model A" baseline):
 
 | Cause | Share |
 |---|---|
-| 🌧️ Failed monsoon (farm pumping during the drought) | **~21–78%** |
-| 💡❓ Free electricity + other lasting changes | **~22–79%** |
+| 🌧️ Failed monsoon (farm pumping during the drought) | **~24–78%** |
+| 💡❓ Free electricity + other lasting changes | **~22–76%** |
 
 Two natural experiments bracket the answer, loosely:
 - **2016** (drought, no scheme; Aug–Oct farm-belt rain −46% vs normal, almost the same as 2023's −45%): demand rose
   +16.7% above expected, against 2023's +21.5%. So a drought alone can explain up to **~78%**.
-- **2024** (scheme, wet year): demand was **+17.1% above the rain-aware model**, a lasting increase that was still
-  there in 2025. If it was already fully present in Aug–Oct 2023, the drought explains only **~21%**.
+- **2024** (scheme, wet year): after removing the effect of the extra rain, demand was still **+16.4% above
+  expected**, a lasting increase that was still there in 2025. If it was already fully present in Aug–Oct 2023, the
+  drought explains only **~24%**.
 
-**What is robust:** a drought alone (2016) produced a jump nearly as large as 2023's, *and* a lasting +15–18%
+**What is robust:** a drought alone (2016) produced a jump nearly as large as 2023's, *and* a lasting +14–17%
 increase beyond what weather explains started in August 2023 and has not gone away, in every model version tested.
 
 > **Which baseline?** "+50%" = vs the same months of 2022. "+21.5%" and "1,860 MW" = vs Model A (a model that ignores
@@ -100,8 +101,9 @@ has no backtest of its own. Each bound rests on one comparison year (2016, 2024)
 2023, the scheme cannot be separated from other lasting growth, and the hour-of-day mapping (households vs farms) is
 approximate. See the [report](reports/final_report.md#6-limitations).
 
-**Revision history:** the headline went from "~75% drought" to "43–78%" to "21–78%" after three external reviews.
-The last change fixed a mistake: the 2024 comparison had counted 2024's wet weather as part of the 2023 drought.
+**Revision history:** the headline went from "~75% drought" to "43–78%" to "24–78%" after four external reviews.
+The main fix: the 2024 comparison had counted 2024's wet weather as part of the 2023 drought. All shares are now
+percentages of the same baseline (Model A's expected demand).
 Details are in the analysis plan's change log.
 
 ## Data sources & credits

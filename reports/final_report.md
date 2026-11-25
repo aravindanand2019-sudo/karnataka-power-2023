@@ -5,7 +5,7 @@
 
 ## ▲ The answer
 
-**Both causes were large, and the data cannot say which was larger. The failed monsoon explains roughly 21–78% of
+**Both causes were large, and the data cannot say which was larger. The failed monsoon explains roughly 24–78% of
 the 2023 surge; the rest came from a lasting increase that began in August 2023 (free electricity plus other growth),
 which the data cannot cleanly split.**
 
@@ -13,17 +13,18 @@ Of the ~1,860 MW of extra demand in August–October 2023 (demand above Model A'
 
 | Cause | Share | How it is bounded |
 |---|---|---|
-| 🌧️ **Failed monsoon** (farm pumping during the drought) | **~21–78%** | two natural experiments: 2016 and 2024 |
-| 💡❓ **Free electricity + other lasting changes** | **~22–79%** | the remainder |
+| 🌧️ **Failed monsoon** (farm pumping during the drought) | **~24–78%** | two natural experiments: 2016 and 2024 |
+| 💡❓ **Free electricity + other lasting changes** | **~22–76%** | the remainder |
 
 Two natural experiments bracket the answer, loosely:
 - **2016 — drought, no scheme:** demand rose +16.7% above expected (2023: +21.5%), so a drought alone can explain up
   to ~78% → **upper end**.
-- **2024 — scheme, wet year:** demand was +17.1% above the rain-aware model (Model B), and +17.8% in 2025. If that
-  lasting increase was already fully present in Aug–Oct 2023, the drought explains only ~21% → **lower end**.
+- **2024 — scheme, wet year:** after removing the effect of its extra rain, demand was still +16.4% above expected
+  (+17.3% in 2025). If that lasting increase was already fully present in Aug–Oct 2023, the drought explains only
+  ~24% → **lower end**.
 
 Two findings are robust across every model version tested: a drought alone (2016) produced a jump nearly as large
-as 2023's, and a **lasting +15–18% increase beyond what weather explains** switched on around August 2023 and never
+as 2023's, and a **lasting +14–17% increase beyond what weather explains** switched on around August 2023 and never
 went away. It includes a +10–13% rise in evening household hours that fits a free-electricity effect. After the 2016
 drought, by contrast, demand returned to normal.
 
@@ -103,15 +104,16 @@ absence of one.
 
 ### 4.3 Two natural experiments bracket the drought share
 
-| Year | Situation | Excess over Model A (ignores rain) | Excess over Model B (includes rain) |
+| Year | Situation | Excess over Model A (ignores rain) | Rain-adjusted excess (actual − Model B) |
 |---|---|---|---|
-| 2016 | drought, **no scheme** | **+16.7%** | +13.8% |
+| 2016 | drought, **no scheme** | **+16.7%** | +14.2% |
 | 2017 | normal rain, no scheme | −2.4% | −2.6% |
-| 2023 | drought + scheme | **+21.5%** | +15.6% |
-| 2024 | wet + scheme | +12.3% | **+17.1%** |
-| 2025 | wet + scheme | +14.4% | +17.8% |
+| 2023 | drought + scheme | **+21.5%** | +16.4% |
+| 2024 | wet + scheme | +12.3% | **+16.4%** |
+| 2025 | wet + scheme | +14.4% | +17.3% |
 
-The 2016 and 2017 figures come from a model trained on 2011–2015; the others from the main model (2015–2022).
+Both columns are percentages of the **same baseline**, Model A's expected demand for that year. The 2016 and 2017
+figures come from a model trained on 2011–2015; the others from the main model (2015–2022).
 
 **Were the two droughts comparable?** Farm-belt rainfall (7 towns, ERA5) against the 2011–2022 average:
 
@@ -128,9 +130,11 @@ In the Aug–Oct window used here the two shortfalls are almost identical. 2023 
 - **2016** shows what a drought *alone* does. During August–December, the 2016 and 2023 curves move almost
   together → the drought could explain up to **~78%** of 2023's excess.
 - **2024** shows what the lasting increase does *without* a drought. 2024 was wet, and a model that ignores rain
-  over-predicts in wet years, so the lasting increase must be measured against Model B: **+17.1%**. If it was already
-  fully present in Aug–Oct 2023, the drought explains only **(21.5 − 17.1) ÷ 21.5 ≈ 21%** (28% if measured in MW;
-  17% using 2025).
+  over-predicts in wet years, so the lasting increase must be measured rain-adjusted: actual minus Model B, which is
+  1,333 MW. To compare like with like, it is expressed as a share of the same baseline as the 2023 figure, Model A's
+  expected demand: **+16.4%**. If it was already fully present in Aug–Oct 2023, the drought explains only
+  **(21.5 − 16.4) ÷ 21.5 ≈ 24%**. (Mixing baselines, i.e. using 2024's +17.1% over Model B, gives 21%; using raw MW,
+  which mixes years with different grid sizes, gives 28%. Using 2025 instead of 2024 gives 20%.)
 
 **Correction:** an earlier version used 2024's excess over Model A (+12.3%) and got a lower end of 43%. That figure
 is the lasting increase *minus* the effect of 2024's extra rain, so it counted wet weather in 2024 as part of the
@@ -172,8 +176,8 @@ The findings were tested by trying to break them:
 | Placebo years (2015, 2021, 2022) | the method finds fake effects | ≤ ±4.5% excess over Model B (2023: +15.6%) | ✅ holds |
 | Drop 8 days where data sources disagree | results change | no change | ✅ holds |
 | 2016 drought, no scheme | a drought alone gives the same jump | it does (+16.7% vs +21.5%) | sets the **upper end** (~78%) |
-| 2024 scheme, wet year (rain-adjusted) | the lasting increase was already there in 2023 | +17.1% over Model B | sets the **lower end** (~21%) |
-| Re-fit without the `year` feature | the result depends on model setup | excesses over Model A fall ~6 points; brackets move to 57–88% (not rain-adjusted); lasting increase stays +15–18% | ⚠️ **the split is model-dependent** |
+| 2024 scheme, wet year (rain-adjusted) | the lasting increase was already there in 2023 | +16.4% remains | sets the **lower end** (~24%) |
+| Re-fit without the `year` feature | the result depends on model setup | excesses over Model A fall ~6 points; upper end rises to 88%; the rain-adjusted lower end can't be computed reliably, because that Model B gets the rain effect backwards (it gives 6%); lasting increase stays +14–16% | ⚠️ **the split is model-dependent** |
 
 **Why test `year`:** trees cannot extrapolate it, so every 2023+ prediction uses the "2022" setting. Model A does not
 see rain and may carry wet 2022's lower demand forward. Without `year`, Model A's backtest error improves (±6.1% vs
@@ -189,7 +193,8 @@ relies on government household figures.
 
 **Revision note:** the first version gave a single best estimate of ~75% for the drought. After a first external
 review, 2024 was added as a lower bound (43–78%). A third review found that the 2024 bound counted 2024's wet weather
-as drought; correcting it gives 21–78%, and the headline no longer claims the drought was the largest driver.
+as drought (21–78%), and the headline no longer claims the drought was the largest driver. A fourth review noted
+that 21% mixed two baselines; with every share on Model A's expected demand the range is 24–78%.
 
 ## 6. Limitations
 
