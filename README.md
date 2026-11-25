@@ -8,19 +8,26 @@ In August 2023, Karnataka's electricity demand jumped by ~50% compared with Augu
 
 ## The answer
 
-**The failed monsoon was the main cause. Free electricity was a small part.**
+**Free electricity was a small part (at most 13% of the increase). Most of the extra electricity went to farm pump
+sets, which the rain evidence ties mostly to the failed monsoon.**
 
 Official sales by customer type (audited ESCOM filings and KERC's Tariff Order 2025), FY2023-24 vs FY2022-23:
 
 | Where the extra electricity went | Increase | Share of the increase |
 |---|---|---|
-| 🚜 Irrigation pump sets (drought) | **+9,974 MU (+48%)** | **69%** |
+| 🚜 Irrigation pump sets (mostly drought) | **+9,974 MU (+48%)** | **69%** |
 | 🏠 Households (the only group that gets free electricity) | +1,839 MU (+13%) | 13% |
 | 🏭 Everything else | +2,736 MU (+10%) | 19% |
 | **Total** | **+14,549 MU (+23.5%)** | 100% |
 
 The pump-set increase was **5.4 times** the household increase, and the pattern holds in all five power companies.
 After removing normal household growth, the scheme accounts for roughly **7–10%** of the increase.
+
+**What this proves and what it doesn't:** household sales are metered, so the cap on free electricity is direct
+evidence. The sales data separates *customer types*, not *causes*: linking the pump-set growth to the drought rests on
+the rain evidence below (demand tracked rain, the surge sat in farm-pump hours, the 2016 drought looked similar). The
+69% is a share of the year-on-year increase; the grid's 24–78% below is a share of demand above a model's expectation,
+so the two are not estimates of the same number.
 
 ![Where the extra electricity went](reports/figures/08_sales_increase.png)
 
@@ -40,8 +47,9 @@ Two natural experiments in the grid data:
 
 **What is robust:** a drought alone (2016) produced a jump nearly as large as 2023's, *and* a lasting +14–17%
 increase beyond what weather explains started in August 2023 and has not gone away, in every model version tested.
-The sales data shows that this lasting increase is mostly **not households**: households grew +13% in FY2023-24,
-against +48% for pump sets.
+The sales data shows that this lasting increase is mostly **not households** (about +209 MW on average in FY24,
+against a lasting ~1,300–1,400 MW). So it is pump sets or other customers, and if pump use stayed high after the rain
+returned, part of the pump growth is not drought. FY2024-25 sales will tell.
 
 > **Which baseline?** "+50%" = vs the same months of 2022. "+21.5%" and "1,860 MW" = vs Model A (a model that ignores
 > rainfall). "+15.6%" = vs Model B (a model that includes rainfall); the same gap is +16.4% if expressed on Model A's
@@ -115,7 +123,10 @@ python -m jupyter nbconvert --to notebook --execute --inplace 01_data_collection
 ## Limitations
 
 **Sales data:** most pump sets are not metered, so pump-set sales are estimates (some line losses may be counted as
-pump use); household sales are metered. The sales data is annual (April–March), so the Aug–Oct 2023 peak cannot be
+pump use, and the companies are reimbursed for pump-set power as a state subsidy, which gives them a reason to book
+more there); household sales are metered. The sales data separates customer types, not causes, and the lasting
+increase in the grid data is too large to be households, so part of the pump growth may be lasting rather than
+drought. The sales data is annual (April–March), so the Aug–Oct 2023 peak cannot be
 isolated, and FY2022-23 was a wet year with low pump use. FY2024-25 actuals are not yet published.
 
 **Grid data:** the drought range from grid data alone is wide, and **the split depends on modelling choices**: re-fitting without the `year` feature moves the
@@ -128,7 +139,9 @@ approximate. See the [report](reports/final_report.md#6-limitations).
 
 **Revision history:** from grid data, the headline went from "~75% drought" to "43–78%" to "24–78%" after four
 external reviews (the main fix: the 2024 comparison had counted 2024's wet weather as part of the 2023 drought).
-Official sales by customer type (Notebook 08) then separated the causes and gave the final answer.
+Official sales by customer type (Notebook 08) then settled the household side directly: free electricity was at
+most 13% of the increase. The headline has changed several times; each change and its reason is logged, and the final
+result rests on different, official data rather than on more modelling.
 Details are in the analysis plan's change log.
 
 ## Data sources & credits

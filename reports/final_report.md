@@ -5,19 +5,24 @@
 
 ## ▲ The answer
 
-**The failed monsoon was the main cause of the 2023 surge. Free electricity was a small part.**
+**Free electricity was a small part (at most 13% of the increase). Most of the extra electricity went to farm pump
+sets, which the rain evidence ties mostly to the failed monsoon.**
 
 Official electricity sales by customer type, FY2023-24 vs FY2022-23 (audited ESCOM filings; KERC Tariff Order 2025):
 
 | Where the extra electricity went | Increase | Share of the increase |
 |---|---|---|
-| 🚜 **Irrigation pump sets** (drought) | **+9,974 MU (+48%)** | **69%** |
+| 🚜 **Irrigation pump sets** (mostly drought) | **+9,974 MU (+48%)** | **69%** |
 | 🏠 **Households** (the only group that gets free electricity) | +1,839 MU (+13%) | 13% |
 | 🏭 Everything else | +2,736 MU (+10%) | 19% |
 | **Total** | **+14,549 MU (+23.5%)** | 100% |
 
 - The pump-set increase was **5.4 times** the household increase, in all five power companies.
 - After removing normal household growth (3–6%/yr), the scheme accounts for roughly **7–10%** of the increase.
+- **Proven vs supported:** the household cap is direct (metered). That the pump-set growth was the drought is
+  supported by the rain evidence in Sections 4.1–4.3, not proven by the sales table, which separates customer types,
+  not causes. The 69% (share of the year-on-year increase) and the grid's 24–78% (share of demand above a model's
+  expectation) measure different things.
 
 The hourly grid data (Sections 4.1–4.4) points the same way but cannot rank the causes on its own, because it sees
 only total demand. Of the ~1,860 MW of extra demand in August–October 2023 (demand above Model A's expectation, i.e.
@@ -170,7 +175,7 @@ limit.
 
 ![Revised ranges](figures/07_revised_ranges.png)
 
-### 4.5 Official sales by customer type settle it: two-thirds of the increase went to pump sets
+### 4.5 Official sales by customer type: free electricity was a small part; two-thirds of the increase went to pump sets
 
 Power companies report their annual sales to KERC **by tariff category**, which separates households (LT-1/LT-2a)
 from irrigation pump sets (LT-4a). FY2022-23 actuals come from each company's audited Tariff Filing 2024; FY2023-24
@@ -216,7 +221,7 @@ The findings were tested by trying to break them:
 | 2016 drought, no scheme | a drought alone gives the same jump | it does (+16.7% vs +21.5%) | sets the **upper end** (~78%) |
 | 2024 scheme, wet year (rain-adjusted) | the lasting increase was already there in 2023 | +16.4% remains | sets the **lower end** (~24%) |
 | Re-fit without the `year` feature | the result depends on model setup | excesses over Model A fall ~6 points; upper end rises to 88%; the rain-adjusted lower end can't be computed reliably, because that Model B gets the rain effect backwards (it gives 6%); lasting increase stays +14–16% | ⚠️ **the split is model-dependent** |
-| Official sales by customer type (FY24 vs FY23) | households grew about as much as pump sets | pump sets +9,974 MU, households +1,839 MU, same pattern in all 5 companies | ✅ **drought was the main cause** |
+| Official sales by customer type (FY24 vs FY23) | households grew about as much as pump sets | pump sets +9,974 MU, households +1,839 MU, same pattern in all 5 companies | ✅ **free electricity ≤13%**; pump sets (mostly drought) the largest part |
 
 **Why test `year`:** trees cannot extrapolate it, so every 2023+ prediction uses the "2022" setting. Model A does not
 see rain and may carry wet 2022's lower demand forward. Without `year`, Model A's backtest error improves (±6.1% vs
@@ -246,6 +251,12 @@ that 21% mixed two baselines; with every share on Model A's expected demand the 
   cannot be isolated. FY2022-23 was a wet year with low pump use. FY2024-25 actuals are not yet published.
 - **Hand transcription** of FY23 figures from scanned filings (BESCOM, HESCOM, GESCOM); the FY24 sums and the overall
   growth match KERC's own figures, which makes large errors unlikely.
+- **The sales data separates customer types, not causes.** The lasting increase in the grid data (~1,300–1,400 MW,
+  still there in normal-rain 2024) is far larger than the household increase (~209 MW on average in FY24), so most of
+  it is pump sets or other customers. If pump use stayed high after the rain returned, part of the FY24 pump growth is
+  not drought. FY2024-25 sales will settle this.
+- **Subsidy incentive:** ESCOMs are reimbursed by the state for pump-set power, which gives them a reason to book more
+  energy (including losses) under pump sets.
 - **Grid data alone gives a wide range** (24–78%) and cannot rank the causes; that is why the sales data was added.
 - **Model-dependent split.** Dropping the `year` feature moves the brackets by 10+ points. Model A's typical monthly
   error on unseen years is ±7.6% (Model B: ±4%), and the brackets use Model A, so each end is uncertain by several
